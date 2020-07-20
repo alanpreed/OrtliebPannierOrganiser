@@ -3,7 +3,13 @@ include("/home/alan/Programming/CAD/utilities/lines.js");
 include("/home/alan/Programming/CAD/utilities/print.js");
 
 function generateSeamAllowance(shape, allowance) {
+
+  // Shape needs to be centred on the origin, otherwise some border edges generate
+  // inside instead of outside
+  translation = shape.getBoundingBox().getCenter().copy();
+  print("translation: " + translation.x.toString() + ", " + translation.y.toString()) 
   print("allowance: " + allowance.toString());
+  shape.move(new RVector(-translation.x, -translation.y))
 
   lines = shape.getExploded()
 
@@ -35,6 +41,10 @@ function generateSeamAllowance(shape, allowance) {
   }
   
   border = createPolyline(points, true)
+
+  // Move shape and border back to where they were originally
+  shape.move(new RVector(translation.x, translation.y))
+  border.move(new RVector(translation.x, translation.y))
   
   return border
 }
