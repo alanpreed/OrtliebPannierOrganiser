@@ -23,7 +23,7 @@ include("/home/alan/Programming/CAD/utilities/lines.js");
 
 // test_base = createBaseshape(top_width, mid_width, base_width, top_height + hem_height, side_height, base_height);
 
-const pocket_width = 210;
+const pocket_width = 230;
 const pocket_h_offset = 50;
 const pocket_height = 110;
 
