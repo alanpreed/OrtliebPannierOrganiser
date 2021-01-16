@@ -1,6 +1,6 @@
-include("/home/alan/Programming/CAD/utilities/createPolyline.js");
-include("/home/alan/Programming/CAD/utilities/lines.js");
-include("/home/alan/Programming/CAD/utilities/print.js");
+include(PROJECT_PATH + "utilities/createPolyline.js");
+include(PROJECT_PATH + "utilities/lines.js");
+include(PROJECT_PATH + "utilities/print.js");
 
 function generateSeamAllowance(shape, allowance) {
 

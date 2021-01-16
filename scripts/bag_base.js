@@ -1,6 +1,8 @@
-include("/home/alan/Programming/CAD/utilities/createPolyline.js");
-include("/home/alan/Programming/CAD/utilities/generateSeamAllowance.js");
-include("/home/alan/Programming/CAD/dimensions.js");
+PROJECT_PATH = "/home/alan/Documents/CAD/Ortlieb bag organiser/scripts/"
+
+include(PROJECT_PATH + "utilities/createPolyline.js");
+include(PROJECT_PATH + "utilities/generateSeamAllowance.js");
+include(PROJECT_PATH + "dimensions.js");
 
 // function createBaseshape(top_width, mid_width, base_width, top_height, side_height, base_height) {
 //   const p1 = [top_width, top_height]

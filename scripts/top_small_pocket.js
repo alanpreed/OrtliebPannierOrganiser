@@ -1,7 +1,9 @@
-include("/home/alan/Programming/CAD/utilities/createPolyline.js");
-include("/home/alan/Programming/CAD/utilities/generateSeamAllowance.js");
-include("/home/alan/Programming/CAD/dimensions.js");
-include("/home/alan/Programming/CAD/utilities/lines.js");
+PROJECT_PATH = "/home/alan/Documents/CAD/Ortlieb bag organiser/scripts/"
+
+include(PROJECT_PATH + "utilities/createPolyline.js");
+include(PROJECT_PATH + "utilities/generateSeamAllowance.js");
+include(PROJECT_PATH + "dimensions.js");
+include(PROJECT_PATH + "utilities/lines.js");
 
 const pocket_h_offset = 40;
 const pocket_height = 110 + 4 * pocket_inset;

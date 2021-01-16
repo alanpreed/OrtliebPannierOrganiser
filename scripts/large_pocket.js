@@ -1,6 +1,8 @@
-include("/home/alan/Programming/CAD/utilities/createPolyline.js");
-include("/home/alan/Programming/CAD/utilities/generateSeamAllowance.js");
-include("/home/alan/Programming/CAD/dimensions.js");
+PROJECT_PATH = "/home/alan/Documents/CAD/Ortlieb bag organiser/scripts/"
+
+include(PROJECT_PATH + "utilities/createPolyline.js");
+include(PROJECT_PATH + "utilities/generateSeamAllowance.js");
+include(PROJECT_PATH + "dimensions.js");
 
 // Include inset to compensate for pocket inset
 pocket_width = large_pocket_width + 2 * pocket_inset
