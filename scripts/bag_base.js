@@ -1,8 +1,10 @@
-PROJECT_PATH = "/home/alan/Documents/CAD/Ortlieb bag organiser/scripts/"
+PROJECT_PATH = "/home/alan/Documents/CAD/Ortlieb bag organiser/scripts/";
 
 include(PROJECT_PATH + "utilities/createPolyline.js");
 include(PROJECT_PATH + "utilities/generateSeamAllowance.js");
 include(PROJECT_PATH + "dimensions.js");
+
+include("scripts/simple.js");
 
 // function createBaseshape(top_width, mid_width, base_width, top_height, side_height, base_height) {
 //   const p1 = [top_width, top_height]
@@ -40,7 +42,8 @@ const p8 = [0, total_height]
 base = createPolyline([p1, p2, p3, p4, p5, p6, p7, p8], true)
 move(base, [-top_width / 2, -top_height / 2]);
 
-border = generateSeamAllowance(base, 15)
+// Add seam allowance around shape
+border = generateSeamAllowance(base, seam_allowance)
 
 hem_line = createPolyline([[0, top_height], [top_width, top_height]], false)
 move(hem_line, [-top_width / 2, -top_height / 2]);
@@ -48,3 +51,7 @@ move(hem_line, [-top_width / 2, -top_height / 2]);
 addShape(base)
 addShape(border)
 addShape(hem_line)
+
+addSimpleText("Hem", [0, total_height / 2], small_text_height, 0, "standard", RS.VAlignTop, RS.HAlignCenter, false, false)
+addSimpleText("Seam allowance", [0, hem_height + total_height / 2], small_text_height, 0, "standard", RS.VAlignTop, RS.HAlignCenter, false, false)
+addSimpleText("Bag base x2", [0, 0], large_text_height, 0, "standard", RS.VAlignTop, RS.HAlignCenter, false, false)
